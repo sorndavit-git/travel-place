@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--Davit's Project-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
+   
+</head>
+<style>
+    .log_in {
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        position: absolute; 
+        top: 20px;
+        right: 20px;
+    }
+    .log_in button {
+        padding: 5px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border-style: none;
+        transition: background-color 1s ease;
+    }
+    .log_in button:hover {
+        background-color: white;
+        color: blue;
+    }
+</style>
+
+<body>
+
+    <div class="log_in">
+        <a href="./log_in.html"><button type="button">Log out?</button></a>
+    </div>
+
+
+    <div class="container mt-5">
+        <h3 class="mb-4">Update your travel details</h3>
+        <form>
+            <!-- Province -->
+            <div class="mb-3">
+                <label for="province" class="form-label">Province</label>
+                <input type="text" class="form-control" id="province" name="Province" placeholder="Enter province" required>
+            </div>
+            <!-- District -->
+            <div class="mb-3">
+                <label for="district" class="form-label">District</label>
+                <input type="text" class="form-control" id="district" name="District" placeholder="Enter district" required>
+            </div>
+            <!-- Place Name -->
+            <div class="mb-3">
+                <label for="place-name" class="form-label">Place Name</label>
+                <input type="text" class="form-control" id="place-name" name="PlaceName" placeholder="Enter place name" required>
+            </div>
+            <!-- IP -->
+            <div class="mb-3">
+                <label for="ip" class="form-label">IP</label>
+                <input type="text" class="form-control" id="ip" name="IP" placeholder="Enter IP (e.g., 192.168.1.1)" pattern="^(?:\d{1,3}\.){3}\d{1,3}$" required>
+            </div>
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Enter description" rows="3" required></textarea>
+            </div>
+            <!-- Buttons -->
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+        <!--select-->
+        <div class="mt-4">
+            <label for="select-action" class="form-label">Choose an action:</label>
+            <select class="form-select" id="select-action" onchange="SelectChange()">
+                <option value="" selected>Open this select menu</option>
+                <option value="./update_place.html">Edit</option>
+                <option value="./dashboard.html">Detail</option>
+                <option value="./dashboard.html">Filter</option>
+                <option value="./dashboard.html">Delete</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        function SelectChange() {
+            const select = document.getElementById('select-action');
+            const selectedValue = select.value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+</body>
+</html>

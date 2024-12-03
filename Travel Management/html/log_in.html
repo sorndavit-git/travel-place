@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--Reaksa's project-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<style>
+    .next {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute; 
+        margin-top: 20px;
+        right: 20px;
+    }
+    .text-primary{
+        text-decoration: none;
+    }
+    .text-primary:hover{
+        text-decoration: underline;
+    }
+
+</style>
+
+
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg">
+        <h3 class="text-center mb-4">Log in to Your Account<br>Travel Place</h3>
+        <form action="/login" method="POST">
+
+            <!--email-->
+            <div class="mb-3">
+                <input id="email" type="email" name="email" class="form-control" placeholder="Input Email" required aria-label="Email">
+            </div>
+            <!--password-->
+            <div class="mb-3">
+                <input id="password" type="password" name="password" class="form-control" placeholder="Input Password" required aria-label="Password">
+            </div>
+            <!--forget_password-->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <a href="" class="text-primary">Forgot Password?</a>
+            </div>
+            <!--under_form-->
+            <div class="d-flex justify-content-between">
+               <button id="submit" type="submit" class="btn btn-primary w-50 me-2" >Log In</button>
+                <button type="reset" class="btn btn-secondary w-50" aria-label="Reset Login Form">Reset</button>
+            </div>
+        </form>
+        <a href="sign_up.html" class="text-center d-block mt-3 text-primary">Create Account</a>
+    </div>
+    <div class="next">
+        <a href="./sign_up.html">Next</a>
+    </div>
+</body>
+
+</html> 

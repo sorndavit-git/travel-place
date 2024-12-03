@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--Davit's Project-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Filters</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<style>
+    .log_in {
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        position: absolute; 
+        top: 10px;
+        right: 20px;
+    }
+    .log_in button {
+        padding: 5px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border-style: none;
+        transition: background-color 0.5s ease;
+    }
+    .log_in button:hover {
+        background-color: white;
+        color: blue;
+    }
+    .add-new{
+        background-color: rgb(240, 240, 240);
+        color: aliceblue;
+        border-radius: 5px;
+        width: 80px;
+        height: 30px ;
+        text-align: center;
+        transition: background-color 0.5s ease;
+    }
+    .add-new a{
+        text-decoration: none;
+        transition: background-color 0.5s ease;
+    }
+    .add-new:hover{
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+    .add-new a:hover{
+        text-decoration: underline;
+    }
+</style>
+<body> 
+
+
+    <div class="log_in">
+    <a href="./log_in.html"><button type="button">Log out?</button></a>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h2 class="card-title mb-0">Dashboard</h2>
+                <div class="add-new">
+                   <a href="./place.html">Add new</a> 
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- Filters -->
+                <div class="row mb-3">
+                    <div class="col-md-3">
+           
+                        <select id="filter-province" class="form-select">
+                            <option value="">All</option>
+                            <option value="Takeo">Takeo</option>
+                            <option value="Kandal">Kandal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                       
+                        <select id="filter-district" class="form-select">
+                            <option value="">All</option>
+                            <option value="Stong">Stong</option>
+                            <option value="Snol">Snol</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        
+                        <select id="filter-place" class="form-select">
+                            <option value="">All</option>
+                            <option value="Bokkor">Bokkor</option>
+                            <option value="Aeonmall">Aeonmall</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        
+                        <select id="filter-ip" class="form-select">
+                            <option value="">All</option>
+                            <option value="192.168.0.1">192.168.0.1</option>
+                            <option value="192.168.0.2">192.168.0.2</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Province</th>
+                                <th>District</th>
+                                <th>Place</th>
+                                <th>IP</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Row 1 -->
+                            <tr>
+                                <td>Takeo</td>
+                                <td>Stong</td>
+                                <td>Bokkor</td>
+                                <td>192.168.0.1</td>
+                                <td>
+                                    <a href="./update_place.html" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="Edit">
+                                        Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Delete">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr>
+                                <td>Kandal</td>
+                                <td>Snol</td>
+                                <td>Aeonmall</td>
+                                <td>192.168.0.2</td>
+                                <td>
+                                    <a href="./update_place.html" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="Edit">
+                                        Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Delete">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+</html>
